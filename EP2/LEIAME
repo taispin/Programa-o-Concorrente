@@ -1,0 +1,27 @@
+/* ***************************************** */
+/*										     */
+/* EP2 - MAC0438 - Programação Concorrente   */
+/*											 */
+/* Bárbara de Castro Fernandes - 7577351	 */
+/* Taís Aparecida Pereira Pinheiro - 7580421 */
+/*											 */
+/* ***************************************** */
+
+Barreira de sincronização utilizada: barreira nativa da biblioteca pthread.h (pthread_barrier_t)
+
+A barreira de sincronização localizada na biblioteca pthread é implementada através de uma
+estrutura contendo as seguintes variáveis:
+
+• Uma variável do tipo mutex;
+
+• Um contador para a quantidade de threads que ainda necessitam passar pela barreira;
+
+• Número necessário de threads para atravessar a barreira;
+
+• Um contador de eventos.
+
+Cada vez que a função pthread_barrier_wait(barrier_t *barrier) é executada, ela
+verifica se a thread que chegou à função é a última. Em caso negativo, desbloqueia-se a barreira,
+e espera-se até que o contador de eventos da barreira mude. Caso seja a última, incrementa-se a
+quantidade de eventos, acordam-se todos os processos e devolve-se o valor de retorno referente
+à última thread.

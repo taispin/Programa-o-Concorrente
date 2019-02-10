@@ -1,0 +1,56 @@
+/* ***************************************** */
+/*										     */
+/* EP3 - MAC0438 - Programação Concorrente   */
+/*											 */
+/* Bárbara de Castro Fernandes - 7577351	 */
+/* Taís Aparecida Pereira Pinheiro - 7580421 */
+/*											 */
+/* ***************************************** */
+
+Como a linguagem C não oferece suporte à monitores, o monitor foi implementado com um módulo monitor.c  a parte e utilizado no programa principal através do header monitor.h
+
+
+Variáveis que compõe o monitor:
+
+Não condicionais: sem_t ,semGarfos,semRefeicoes e semImpressao;
+
+Condicionais: semFilosofos
+
+
+Métodos que compõe o monitor:
+
+• void inicializaMonitor(int,int,Filosofo*): Responsável pela inicialização do monitor;
+
+• void wait(condicao*): Função encarregada da função wait do monitor;
+
+• void signal(condicao*): Função encarregada da função signal do monitor;
+
+• void ficaFaminto(int, Filosofo*): Responsável por colocar o um Filósofo em estado
+Faminto e verificar se ele consegue tomar os garfos que lhe são possíveis.
+
+• void ficaFaminto(int, Filosofo*): Responsável por colocar o um Filósofo em estado
+Faminto e verificar se ele consegue tomar os garfos.
+
+• void tentaPegarGarfos(int, Filosofo*): Complementar ao método ficaFaminto, veri-
+ficar se um filófoso consegue tomar os garfos que lhe são possíveis.
+
+• void soltaGarfos(int i,Filosofo*, int*): Responsável por após um filósofo comer uma porção
+de comida os garfos serem devolvidos.
+
+
+Implementação dos Métodos wait e signal:
+
+Nesta implementação cada variável condicional foi implementada através de um semáforo, desta maneira a implementação do wait e signal se deram da forma: 
+
+void wait(condicao *var)
+{
+    sem_wait(var);
+}
+
+void signal(condicao *var)
+{
+    sem_post(var);
+}
+
+
+

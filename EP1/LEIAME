@@ -1,0 +1,27 @@
+/* ***************************************** */
+/*					     					 */
+/* EP1 - MAC0438 - Programação Concorrente   */
+/*					     					 */
+/* Bárbara de Castro Fernandes - 7577351     */
+/* Taís Aparecida Pereira Pinheiro - 7580421 */
+/*					     					 */
+/* ***************************************** */
+
+SOBRE O PROGRAMA
+================
+Uma submodalidade comum em provas de ciclismo é a corrida por eliminação. Neste programa, esta submodalidade será a única utilizada para definir os medalhistas de ouro, prata e bronze da competição. O objetivo deste exercício-programa é simular uma corrida por eliminação e exibir as classificações de cada ciclista.
+
+COMPILAÇÃO
+==========
+Para compilar, digite:
+	$ make
+
+ENTRADA
+=======
+Existem três maneiras de se executar o programa principal após a devida compilação:
+
+./ep1 d n u: Realiza a corrida de n ciclistas em uma pista  de tamanho d e todos os ciclistas tem velocidade constante = 50 Km/h.
+
+./ep1 d n v: Realiza a corrida de n ciclistas em uma pista  de tamanho d e todos os ciclistas tem velocidade = 25 Km/h na primeira volta. A partir da segunda volta a velocidade é alterada de forma aleatória.
+
+./ep1 d n [u|v] debug: Modo debug. Neste modo, que pode ser executado tanto com a opção u quanto com a v, exibe-se na tela a cada 14,4s a volta em que cada ciclista está e a posição dele naquela volta.
